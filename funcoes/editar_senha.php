@@ -16,12 +16,10 @@
     unset($conn);
 
     if( $rows == 1 ){
-        echo("<script language='javascript' type='text/javascript'>
-                window.alert('Nova senha salva com sucesso'); </script>");
+        $_SESSION["senha_ok"] = true;
         header("Location: ../perfil.php");
     }else{
-        echo("<script language='javascript' type='text/javascript'>
-                alert('Senha atual não confere. Não foi salvo.'); </script>");
+        $_SESSION["senha_ok"] = false;
         header("Location: ../perfil.php");
     }
 
